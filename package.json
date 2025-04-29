@@ -1,0 +1,17 @@
+{
+  "name": "apollo247",
+  "version": "1.0.0",
+  "description": "Apollo 24x7",
+  "license": "ISC",
+  "author": "Shuiii",
+  "type": "commonjs",
+  "main": "server",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.14.0"
+  }
+}
