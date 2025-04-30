@@ -114,12 +114,16 @@ export default function Home() {
               <h1>Fees (In Rupees)</h1>
               <div className={styles.MOD}>
                 <div>
-                  <input type="checkbox" name="HV" id="HV" />
-                  <label htmlFor="HV">Hospital Visit</label>
+                  <input type="checkbox" name="onetofive" id="onetofive" />
+                  <label htmlFor="onetofive">100-500</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="OC" id="OC" />
-                  <label htmlFor="OC">Online Consult</label>
+                  <input type="checkbox" name="fivetoten" id="fivetoten" />
+                  <label htmlFor="fivetoten">500-1000</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="ten" id="ten" />
+                  <label htmlFor="ten">1000+</label>
                 </div>
               </div>
             </div>
@@ -127,12 +131,17 @@ export default function Home() {
               <h1>Language</h1>
               <div className={styles.MOD}>
                 <div>
-                  <input type="checkbox" name="HV" id="HV" />
-                  <label htmlFor="HV">Hospital Visit</label>
+                  <input type="checkbox" name="eng" id="eng" />
+                  <label htmlFor="eng">English</label>
+                  <span class="custom-checkbox"></span>
                 </div>
                 <div>
-                  <input type="checkbox" name="OC" id="OC" />
-                  <label htmlFor="OC">Online Consult</label>
+                  <input type="checkbox" name="hin" id="hin" />
+                  <label htmlFor="hin">Hindi</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="tel" id="tel" />
+                  <label htmlFor="tel">Telugu</label>
                 </div>
               </div>
             </div>
@@ -141,11 +150,11 @@ export default function Home() {
               <div className={styles.MOD}>
                 <div>
                   <input type="checkbox" name="HV" id="HV" />
-                  <label htmlFor="HV">Hospital Visit</label>
+                  <label htmlFor="HV">Apollo Hospitals</label>
                 </div>
                 <div>
                   <input type="checkbox" name="OC" id="OC" />
-                  <label htmlFor="OC">Online Consult</label>
+                  <label htmlFor="OC">Other Clinics</label>
                 </div>
               </div>
             </div>
