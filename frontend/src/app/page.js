@@ -28,9 +28,134 @@ export default function Home() {
           <div className={styles.loginBtn}>
               <button className={styles.loginButton}>
                   <span>Login</span>
-                  <Image src="/user.svg" width={26} height={26} />
+                  <Image src="/user.svg" alt="user" width={26} height={26} />
               </button>
           </div>
+        </div>
+        <div className={styles.separator}></div>
+        <div className={styles.links}>
+            <ul>
+              <li>Buy Medicines</li>
+              <li>Find Doctors</li>
+              <li>Lab Tests</li>
+              <li>Circle Membership</li>
+              <li>Health Records</li>
+              <li>Diabetes Reversal</li>
+              <li>Buy Insurance</li>
+            </ul>
+        </div>
+      </div>
+      <div className={styles.content}>
+        <div className={styles.leftSection}>
+          <div className={styles.filters}>
+            <div className={styles.filterHeading}>
+              <span>
+                Filters
+              </span>
+              <span>
+                Clear All
+              </span>
+            </div>
+            <div className={styles.selectedFilter}>
+              <div className={styles.SF}>
+                  Near Me
+                <Image src="/close.svg" width={20} height={20} alt="close" />
+              </div>
+              <div className={styles.SF}>
+                  0-500
+                <Image src="/close.svg" width={20} height={20} alt="close" />
+              </div>
+              <div className={styles.SF}>
+                  11-16
+                <Image src="/close.svg" width={20} height={20} alt="close" />
+              </div>
+              <div className={styles.SF}>
+                  6-10
+                <Image src="/close.svg" width={20} height={20} alt="close" />
+              </div>
+            </div>
+          </div>
+          <div className={styles.filterOptions}>
+            <div className={styles.filterMOD}>
+              <h1>Mode of Consult</h1>
+              <div className={styles.MOD}>
+                <div>
+                  <input type="checkbox" name="HV" id="HV" />
+                  <label htmlFor="HV">Hospital Visit</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="OC" id="OC" />
+                  <label htmlFor="OC">Online Consult</label>
+                </div>
+              </div>
+            </div>
+            <div className={styles.filterMOD}>
+              <h1>Experience (In Years)</h1>
+              <div className={styles.MOD}>
+                <div>
+                  <input type="checkbox" name="05" id="05y" />
+                  <label htmlFor="05y">0-5</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="60" id="60y" />
+                  <label htmlFor="60y">6-10</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="16" id="16y" />
+                  <label htmlFor="16y">11-16</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="16+" id="16+y" />
+                  <label htmlFor="16+y">16+</label>
+                </div>
+              </div>
+            </div>
+            <div className={styles.filterMOD}>
+              <h1>Fees (In Rupees)</h1>
+              <div className={styles.MOD}>
+                <div>
+                  <input type="checkbox" name="HV" id="HV" />
+                  <label htmlFor="HV">Hospital Visit</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="OC" id="OC" />
+                  <label htmlFor="OC">Online Consult</label>
+                </div>
+              </div>
+            </div>
+            <div className={styles.filterMOD}>
+              <h1>Language</h1>
+              <div className={styles.MOD}>
+                <div>
+                  <input type="checkbox" name="HV" id="HV" />
+                  <label htmlFor="HV">Hospital Visit</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="OC" id="OC" />
+                  <label htmlFor="OC">Online Consult</label>
+                </div>
+              </div>
+            </div>
+            <div className={styles.filterMOD}>
+              <h1>Facility</h1>
+              <div className={styles.MOD}>
+                <div>
+                  <input type="checkbox" name="HV" id="HV" />
+                  <label htmlFor="HV">Hospital Visit</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="OC" id="OC" />
+                  <label htmlFor="OC">Online Consult</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.middleSection}>
+          <h1>IS</h1>
+        </div>
+        <div className={styles.rightSection}>
+          <h1>CUTE</h1>
         </div>
       </div>
     </div>
