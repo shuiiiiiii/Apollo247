@@ -1,186 +1,23 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
-}
-
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
-}
-
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
-}
-
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
-}
-
-.footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
-}
-
-.footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer img {
-  flex-shrink: 0;
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-}
-
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
-  .main {
-    align-items: center;
-  }
-
-  .main ol {
-    text-align: center;
-  }
-
-  .ctas {
-    flex-direction: column;
-  }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-}
-
 .container{
   max-width: 100vw;
   display: flex;
   height: 100vh;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header{
   width: 100%;
-  height: 7%;
-  border-bottom: 1px solid #e7e7e5;
+  height: 12%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.separator{
+  border-bottom: 1px solid #e7e7e5;
+  width: 100%;
+  height: 1px;
 }
 
 .navbar{
@@ -188,7 +25,8 @@ a.secondary {
   display: flex;
   padding: 0.25%;
   align-items: center;
-  height: 100%;
+  height: 60%;
+  z-index: 2;
 }
 
 .locationContainer{
@@ -203,16 +41,19 @@ a.secondary {
 
 .locationIcon{
   margin-right: 5%;
+  cursor: pointer;
 }
 
 .SL{
   font-size: 12px;
   color: #4b4a48;
   font-weight: 500;
+  cursor: default;
 }
 
 .SA{
   font-size: 14px;
+  cursor: pointer;
 }
 
 .SAC{
@@ -277,6 +118,7 @@ a.secondary {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .loginButton span{
@@ -285,3 +127,159 @@ a.secondary {
   margin-right: 8%;
   font-weight: 600;
 }
+
+.links{
+  width: 100%;
+  color: black;
+  height: 39%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  /* box-shadow: 0 0 20px rgb(226, 226, 226); */
+  /* filter: drop-shadow(0 0 200px); */
+  border-bottom: 1px solid #e7e7e5;
+}
+
+
+.links ul{
+  display: flex;
+  list-style: none; 
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+.links ul li{
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0 2% 0 2%;
+  cursor: pointer;
+  padding: 5px;
+  border-bottom: 2px solid transparent ;
+}
+
+.links ul li:hover{
+  color: #106c89;
+  border-bottom: 2px solid #106c89;
+}
+
+.content{
+  height: 88%;
+  color: black;
+  min-width: 1275px;
+  display: flex;
+  justify-content: center;
+}
+
+.leftSection{
+  width: 17%;
+  border-right: 1px solid #e7e7e5;
+  height: 100%;
+}
+
+.filters{
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #e7e7e5;
+}
+
+.filterHeading{
+  height: 10%;
+  width: 100%;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10%;
+  padding-right: 5%;
+}
+
+.filterHeading span:nth-child(1){
+  font-size: 16px;
+  color: black;
+  font-weight: 800;
+}
+
+.filterHeading span:nth-child(2){
+  font-size: 14px;
+  color: #106c89;
+  cursor: pointer;
+}
+
+.selectedFilter{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5%;
+}
+
+.SF{
+  display: flex;
+  align-items: center;
+  border: 1px solid #106c89;
+  background-color: #ddf1f8;
+  border-radius: 100px;
+  justify-content: center;
+  padding: 3%;
+  margin: 2% 2% 2% 0;
+  font-size: 14px;
+  color: #106c89;
+  font-weight: 800;
+}
+
+.SF img{
+  cursor: pointer;
+  padding-left: 5%;
+}
+
+.filterOptions{
+  width: 100%;
+  height: 82%;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.filterMOD{
+  /* margin-top: 5%; */
+  height: 15%;  
+}
+
+.filterMOD:nth-child(1){
+  margin-top: 10%;
+}
+
+.filterMOD h1{
+  font-size: 16px;
+}
+
+.MOD{
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  height: 60%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.MOD div{
+  display: flex;
+  align-items: center;
+  height: 50%;
+  width: 90%;
+}
+
+.MOD div label{
+  margin-left: 4%;
+}
+
+.middleSection{
+  width: 66%;
+}
+
+.rightSection{
+  width: 17%;
+}
+
