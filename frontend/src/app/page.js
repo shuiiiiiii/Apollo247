@@ -1,95 +1,163 @@
+'use client'
+
 import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  return(
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <div className={styles.navbar}>
+          <Image src="/apollo247.svg" width={70} height={48} alt="Apollo24x7"/>
+          <div className={styles.locationContainer}>
+              <Image className={styles.locationIcon} src="/location.svg" width={24} height={24} alt="Location" />
+            <div>
+              <h5 className={styles.SL}>Select Location</h5>
+              <div className={styles.SAC}>
+                <h4 className={styles.SA}>Select Address</h4>
+                <Image src="/dropdown.svg" width={20} height={20} alt="dropdown" />
+              </div>
+            </div>
+          </div>
+          <div className={styles.searchBar}>
+            <div className={styles.searchInputBar}>
+              <Image className={styles.searchIcon} src="/search.svg" width={16} height={16} alt="search" />
+              <input className={styles.searchInput} type="text" placeholder="Search Doctors, Speacialities, Conditions etc." />
+            </div>
+          </div>
+          <div className={styles.loginBtn}>
+              <button className={styles.loginButton}>
+                  <span>Login</span>
+                  <Image src="/user.svg" alt="user" width={26} height={26} />
+              </button>
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className={styles.separator}></div>
+        <div className={styles.links}>
+            <ul>
+              <li>Buy Medicines</li>
+              <li>Find Doctors</li>
+              <li>Lab Tests</li>
+              <li>Circle Membership</li>
+              <li>Health Records</li>
+              <li>Diabetes Reversal</li>
+              <li>Buy Insurance</li>
+            </ul>
+        </div>
+      </div>
+      <div className={styles.content}>
+        <div className={styles.leftSection}>
+          <div className={styles.filters}>
+            <div className={styles.filterHeading}>
+              <span>
+                Filters
+              </span>
+              <span>
+                Clear All
+              </span>
+            </div>
+            <div className={styles.selectedFilter}>
+              <div className={styles.SF}>
+                  Near Me
+                <Image src="/close.svg" width={20} height={20} alt="close" />
+              </div>
+              <div className={styles.SF}>
+                  0-500
+                <Image src="/close.svg" width={20} height={20} alt="close" />
+              </div>
+              <div className={styles.SF}>
+                  11-16
+                <Image src="/close.svg" width={20} height={20} alt="close" />
+              </div>
+              <div className={styles.SF}>
+                  6-10
+                <Image src="/close.svg" width={20} height={20} alt="close" />
+              </div>
+            </div>
+          </div>
+          <div className={styles.filterOptions}>
+            <div className={styles.filterMOD}>
+              <h1>Mode of Consult</h1>
+              <div className={styles.MOD}>
+                <div>
+                  <input type="checkbox" name="HV" id="HV" />
+                  <label htmlFor="HV">Hospital Visit</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="OC" id="OC" />
+                  <label htmlFor="OC">Online Consult</label>
+                </div>
+              </div>
+            </div>
+            <div className={styles.filterMOD}>
+              <h1>Experience (In Years)</h1>
+              <div className={styles.MOD}>
+                <div>
+                  <input type="checkbox" name="05" id="05y" />
+                  <label htmlFor="05y">0-5</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="60" id="60y" />
+                  <label htmlFor="60y">6-10</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="16" id="16y" />
+                  <label htmlFor="16y">11-16</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="16+" id="16+y" />
+                  <label htmlFor="16+y">16+</label>
+                </div>
+              </div>
+            </div>
+            <div className={styles.filterMOD}>
+              <h1>Fees (In Rupees)</h1>
+              <div className={styles.MOD}>
+                <div>
+                  <input type="checkbox" name="HV" id="HV" />
+                  <label htmlFor="HV">Hospital Visit</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="OC" id="OC" />
+                  <label htmlFor="OC">Online Consult</label>
+                </div>
+              </div>
+            </div>
+            <div className={styles.filterMOD}>
+              <h1>Language</h1>
+              <div className={styles.MOD}>
+                <div>
+                  <input type="checkbox" name="HV" id="HV" />
+                  <label htmlFor="HV">Hospital Visit</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="OC" id="OC" />
+                  <label htmlFor="OC">Online Consult</label>
+                </div>
+              </div>
+            </div>
+            <div className={styles.filterMOD}>
+              <h1>Facility</h1>
+              <div className={styles.MOD}>
+                <div>
+                  <input type="checkbox" name="HV" id="HV" />
+                  <label htmlFor="HV">Hospital Visit</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="OC" id="OC" />
+                  <label htmlFor="OC">Online Consult</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.middleSection}>
+          <h1>IS</h1>
+        </div>
+        <div className={styles.rightSection}>
+          <h1>CUTE</h1>
+        </div>
+      </div>
     </div>
   );
 }
