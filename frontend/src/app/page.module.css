@@ -166,3 +166,122 @@ a.secondary {
     filter: invert();
   }
 }
+
+.container{
+  max-width: 100vw;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.header{
+  width: 100%;
+  height: 7%;
+  border-bottom: 1px solid #e7e7e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar{
+  min-width: 1275px;
+  display: flex;
+  padding: 0.25%;
+  align-items: center;
+  height: 100%;
+}
+
+.locationContainer{
+  margin-left: 1%;
+  height: 100%;
+  width: 13%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.locationIcon{
+  margin-right: 5%;
+}
+
+.SL{
+  font-size: 12px;
+  color: #4b4a48;
+  font-weight: 500;
+}
+
+.SA{
+  font-size: 14px;
+}
+
+.SAC{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBar{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchInputBar{
+  width: 80%;
+  height: 70%;
+  border: 1px solid #bebebb;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  background-color: #f6f6f6;
+}
+
+.searchIcon{
+  margin-right: 2%;
+}
+
+.searchInput{
+  outline: none;
+  color: black;
+  width: 90%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  caret-color: #3d88a0;
+  font-size: 14px;
+}
+
+.searchInput::placeholder{
+  color: #bebebb;
+}
+
+.loginBtn{
+  width: 20%;
+  height: 100%;  
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.loginButton{
+  height: 70%;
+  width: 40%;
+  border-radius: 8px;
+  border: 1px solid #16595d;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginButton span{
+  color: #16595d;
+  font-size: 14px;
+  margin-right: 8%;
+  font-weight: 600;
+}
