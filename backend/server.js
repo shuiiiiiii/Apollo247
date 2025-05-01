@@ -12,6 +12,16 @@ app.get("/", (req, res) => {
     res.send("HELLO!");
 });
 
+app.get("/fetchDoctors/:id", (req, res) => {
+    res.send("DOCTORS WILL BE SENT SOON!");
+    console.log(req.params.id);
+    // do the logic
+});
+
+app.post("/adddoc/:id", (req, res) => {
+    // do the logic
+});
+
 app.listen(port, () => {
     console.log(`Server is up on PORT:${port}`);
 });
