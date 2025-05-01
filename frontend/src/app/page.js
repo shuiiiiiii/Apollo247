@@ -335,6 +335,18 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <div className={styles.pagination}>
+            <ul>
+              <li>&#60;</li>
+              <li className={styles.active}>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>5</li>
+              <li>...</li>
+              <li>&#62;</li>
+            </ul>
+          </div>
         </div>
         <div className={styles.rightSection}>
           <div className={styles.ad}>
