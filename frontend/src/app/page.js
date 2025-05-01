@@ -337,7 +337,17 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.rightSection}>
-          <h1>CUTE</h1>
+          <div className={styles.ad}>
+            <div>
+              <Image src="/docs.webp" width={172} height={82} alt="docs" />
+            </div>
+            <div className={styles.NH}>
+              Need help consult the right doctor?
+            </div>
+            <div className={styles.call}>
+              Call +91-8040245807 to book instantly
+            </div>
+          </div>
         </div>
       </div>
     </div>
