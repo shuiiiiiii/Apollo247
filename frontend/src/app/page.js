@@ -209,6 +209,131 @@ export default function Home() {
                 </section>
               </div>
             </div>
+            <div className={styles.doctor}>
+              <div>
+                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
+              </div>
+              <div>
+                <h1>Dr. D Bhanu Prakash
+                  <Image src="/info.svg" width={14} height={14} alt="info"/>
+                </h1>
+                <span className={styles.pos}>General Practioner</span>
+                <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
+                <span className={styles.place}>Hyderabad</span>
+                <span className={styles.hos}>Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
+              </div>
+              <div>
+                <section className={styles.price}>
+                  ₹1200
+                </section>
+                <section>
+                  <button>
+                    <span className={styles.co}>Consult Online</span>
+                    <span className={styles.avail}>Available at 01:40 AM</span>
+                  </button>
+                </section>
+              </div>
+            </div>
+            <div className={styles.doctor}>
+              <div>
+                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
+              </div>
+              <div>
+                <h1>Dr. D Bhanu Prakash
+                  <Image src="/info.svg" width={14} height={14} alt="info"/>
+                </h1>
+                <span className={styles.pos}>General Practioner</span>
+                <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
+                <span className={styles.place}>Hyderabad</span>
+                <span className={styles.hos}>Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
+              </div>
+              <div>
+                <section className={styles.price}>
+                  ₹1200
+                </section>
+                <section>
+                  <button>
+                    <span className={styles.co}>Consult Online</span>
+                    <span className={styles.avail}>Available at 01:40 AM</span>
+                  </button>
+                </section>
+              </div>
+            </div>
+            <div className={styles.doctor}>
+              <div>
+                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
+              </div>
+              <div>
+                <h1>Dr. D Bhanu Prakash
+                  <Image src="/info.svg" width={14} height={14} alt="info"/>
+                </h1>
+                <span className={styles.pos}>General Practioner</span>
+                <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
+                <span className={styles.place}>Hyderabad</span>
+                <span className={styles.hos}>Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
+              </div>
+              <div>
+                <section className={styles.price}>
+                  ₹1200
+                </section>
+                <section>
+                  <button>
+                    <span className={styles.co}>Consult Online</span>
+                    <span className={styles.avail}>Available at 01:40 AM</span>
+                  </button>
+                </section>
+              </div>
+            </div>
+            <div className={styles.doctor}>
+              <div>
+                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
+              </div>
+              <div>
+                <h1>Dr. D Bhanu Prakash
+                  <Image src="/info.svg" width={14} height={14} alt="info"/>
+                </h1>
+                <span className={styles.pos}>General Practioner</span>
+                <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
+                <span className={styles.place}>Hyderabad</span>
+                <span className={styles.hos}>Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
+              </div>
+              <div>
+                <section className={styles.price}>
+                  ₹1200
+                </section>
+                <section>
+                  <button>
+                    <span className={styles.co}>Consult Online</span>
+                    <span className={styles.avail}>Available at 01:40 AM</span>
+                  </button>
+                </section>
+              </div>
+            </div>
+            <div className={styles.doctor}>
+              <div>
+                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
+              </div>
+              <div>
+                <h1>Dr. D Bhanu Prakash
+                  <Image src="/info.svg" width={14} height={14} alt="info"/>
+                </h1>
+                <span className={styles.pos}>General Practioner</span>
+                <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
+                <span className={styles.place}>Hyderabad</span>
+                <span className={styles.hos}>Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
+              </div>
+              <div>
+                <section className={styles.price}>
+                  ₹1200
+                </section>
+                <section>
+                  <button>
+                    <span className={styles.co}>Consult Online</span>
+                    <span className={styles.avail}>Available at 01:40 AM</span>
+                  </button>
+                </section>
+              </div>
+            </div>
           </div>
         </div>
         <div className={styles.rightSection}>
