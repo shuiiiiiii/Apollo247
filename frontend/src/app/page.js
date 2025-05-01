@@ -132,9 +132,7 @@ export default function Home() {
               <div className={styles.MOD}>
                 <div>
                   <input type="checkbox" name="eng" id="eng" />
-                  <label htmlFor="eng">English</label>
-                  <span class="custom-checkbox"></span>
-                </div>
+                  <label htmlFor="eng">English</label>                </div>
                 <div>
                   <input type="checkbox" name="hin" id="hin" />
                   <label htmlFor="hin">Hindi</label>
@@ -161,7 +159,57 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.middleSection}>
-          <h1>IS</h1>
+          <div className={styles.addressLinks}>
+            <span>Home</span>
+            <span>
+              <Image src="/dropdown.svg" width={15} height={15} alt="right" />
+            </span>
+            <span>Doctors</span>
+            <span>
+              <Image src="/dropdown.svg" width={15} height={15} alt="right" />
+            </span>
+            <span>General Physicians</span>
+          </div>
+          <div className={styles.contentHeading}>
+            <div>
+              <h1>Consult General Physicians Online - Internal Medicine Specialists</h1>
+              <h3>(763 doctors)</h3>
+            </div>
+            <div className={styles.dropdownFilter}>
+              <div>
+                <Image src="/sort.svg" width={24} height={24} alt="sort" />
+                <span>Relevance</span>
+                <Image src="/dropdown.svg" width={12} height={12} alt="dropdown" />
+              </div>
+            </div>
+          </div>
+          <div className={styles.doctors}>
+            <div className={styles.doctor}>
+              <div>
+                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
+              </div>
+              <div>
+                <h1>Dr. D Bhanu Prakash
+                  <Image src="/info.svg" width={14} height={14} alt="info"/>
+                </h1>
+                <span className={styles.pos}>General Practioner</span>
+                <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
+                <span className={styles.place}>Hyderabad</span>
+                <span className={styles.hos}>Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
+              </div>
+              <div>
+                <section className={styles.price}>
+                  ₹1200
+                </section>
+                <section>
+                  <button>
+                    <span className={styles.co}>Consult Online</span>
+                    <span className={styles.avail}>Available at 01:40 AM</span>
+                  </button>
+                </section>
+              </div>
+            </div>
+          </div>
         </div>
         <div className={styles.rightSection}>
           <h1>CUTE</h1>
