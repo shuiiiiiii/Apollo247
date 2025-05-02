@@ -9,7 +9,7 @@
 
 .header{
   width: 100%;
-  height: 12%;
+  min-height: 12%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -112,7 +112,7 @@
 
 .loginButton{
   height: 70%;
-  width: 40%;
+  width: 55%;
   border-radius: 8px;
   border: 1px solid #16595d;
   background-color: transparent;
@@ -175,6 +175,25 @@
   width: 17%;
   border-right: 1px solid #e7e7e5;
   height: 100%;
+  overflow-y: scroll;
+}
+
+.leftSection::-webkit-scrollbar {
+  width: 4px;
+  height: 6px;
+}
+
+
+.leftSection::-webkit-scrollbar-thumb {
+  background: #e7e7e5; 
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 10px;
+}
+
+
+.leftSection:-webkit-scrollbar-thumb:hover {
+  background: #ffffff69; 
 }
 
 .filters{
@@ -230,12 +249,39 @@
 
 .SF img{
   cursor: pointer;
+  height: 20px;
+  width: 20px;
   padding-left: 5%;
 }
 
 .filterOptions{
   width: 100%;
   height: 82%;
+}
+
+.showDoc{
+  width: 100%;
+  margin: 8% 0 8% 0;
+  height: 6%;
+  padding:0  10px 0 0;
+}
+
+.showDoc button{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 1px solid #106c89;
+  background-color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  color: #106c89;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.showDoc button:hover{
+  background-color: #DDf1f8;
+  box-shadow: 0 0 25px #dbdbdb;
 }
 
 .filterMOD{
@@ -247,11 +293,11 @@
 }
 
 .filterMOD:nth-child(2){
-  height: 25%;
+  height: 15%;
 }
 
 .filterMOD:nth-child(3){
-  height: 20%;
+  height: 25%;
 }
 
 .filterMOD:nth-child(4){
@@ -579,3 +625,54 @@
   background-color: #106c89;
   color: white !important;
 } 
+
+.addDoc{
+  position: relative;
+  bottom: 80%;
+  width: 50%;
+  height: 600px;
+  padding: 5%;
+  background-color: black;
+  border-radius: 10px;
+  display: none;
+}
+
+.addDoc h1{
+  font-size: 45px;
+  margin-bottom: 3%;
+}
+
+.addDoc input[type="text"], .addDoc input[type="number"]{
+  background-color: white;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 1% 1% 1% 0;
+  color: black;
+  width: 350px;
+  height: 40px;
+}
+
+.addDoc input[type="checkbox"]{
+  margin-left: 1%;
+}
+
+.addDoc label{
+  margin-right: 2%;
+}
+
+.checkboxes{
+  margin-top: 0.5%;
+}
+
+.addDoc button{
+  width: 150px;
+  height: 50px;
+  margin-top: 3%;
+  background-color: #3d88a0;
+  color: black;
+  border: 1px solid #16595d;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
