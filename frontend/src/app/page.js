@@ -1,7 +1,6 @@
 'use client'
 
 import Image from "next/image";
-import { Truculenta } from "next/font/google";
 
 const addDoc = () => {
   const docName = document.querySelector("#docName").value;
