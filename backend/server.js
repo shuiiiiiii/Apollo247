@@ -93,9 +93,7 @@ app.get('/getdoctor', async (req, res) => {
     if(otherC != undefined) filters.otherC = otherC;
 
     console.log(filters);
-    const doctors = await doctor.find(filters)
-      .skip((page - 1) * limit)
-      .limit(Number(limit));
+    const doctors = await doctor.find(filters);
 
     const total = await doctor.countDocuments(filters);
 
