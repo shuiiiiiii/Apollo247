@@ -110,29 +110,36 @@ const fetchDoc = async () => {
 
   childDivs.forEach(div => div.remove());
 
-  for(let i = 0; i < response.doctors.length; i++) {
-    const doctor = document.createElement('div');
-    doctor.setAttribute("className", ".doctor}")
+  // for(let i = 0; i < response.doctors.length; i++) {
+  //   const doctor = document.createElement('div');
+  //   doctor.className = "doctor";
 
-    const div = document.createElement('div');
-    const img = document.createElement('img');
+  //   const div = document.createElement('div');
+  //   const img = document.createElement('img');
 
-    const div2 = document.createElement('div');
-    const h1 = document.createElement('h1');
-    const span = document.createElement('span');
-    const span2 = document.createElement('span');
-    const span3 = document.createElement('span');
-    const span4 = document.createElement('span');
+  //   const div2 = document.createElement('div');
+  //   const h1 = document.createElement('h1');
+  //   const span = document.createElement('span');
+  //   span.className = "pos";
+  //   const span2 = document.createElement('span');
+  //   span2.className = "exp";
+  //   const span3 = document.createElement('span');
+  //   span3.className = "place";
+  //   const span4 = document.createElement('span');
+  //   span4.className = hos;
 
-    const div3 = document.createElement('div');
-    const section = document.createElement('section');
-    const section2 = document.createElement('section');
-    const button = document.createElement('button');
-    const span5 = document.createElement('span');
-    const span6 = document.createElement('span');
+  //   const div3 = document.createElement('div');
+  //   const section = document.createElement('section');
+  //   section.className = "price";
+  //   const section2 = document.createElement('section');
+  //   const button = document.createElement('button');
+  //   const span5 = document.createElement('span');
+  //   span5.className = "co";
+  //   const span6 = document.createElement('span');
+  //   span6.className = "avail";
 
-
-  };
+  //   h1.innerText = response.doctors[i];
+  // };
 };
 
 const leti = () => {
@@ -325,7 +332,7 @@ export default function Home() {
               </div>
               <div>
                 <h1>Dr. D Bhanu Prakash
-                  <Image src="/info.svg" width={14} height={14} alt="info" />
+                  <Image src="/info.svg" width="14px" height="14px" alt="info" />
                 </h1>
                 <span className="pos">General Practioner</span>
                 <span className="exp">10 Years • MBBS, AFIH, Advanced Certificate</span>
