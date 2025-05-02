@@ -2,6 +2,111 @@
 
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Truculenta } from "next/font/google";
+
+const addDoc = () => {
+  const docName = document.querySelector("#docName").value;
+  const docExp  = document.querySelector("#docExp").value;
+  const docDeg  = document.querySelector("#docDeg").value;
+  const docCity = document.querySelector("#docCity").value;
+  const docCost = document.querySelector("#docCost").value;
+  const docImg  = document.querySelector("#docImg").value;
+  const docOc   = document.querySelector("#docOc").checked;
+  const docHv   = document.querySelector("#docHv").checked;
+  const docHin  = document.querySelector("#docHin").checked;
+  const docEng  = document.querySelector("#docEng").checked;
+  const docApollo = document.querySelector("#docApollo").checked;
+  const docOther = document.querySelector("#docOther").checked;
+  const docSpec = document.querySelector("#docSpec").value;
+
+  const docForm = document.querySelector("#addDocForm");
+
+  const docObj = {
+    name: docName,
+    speciality: docSpec,
+    exp: docExp,
+    degree: docDeg,
+    city: docCity,
+    ocPrice: docCost,
+    onlineConsult: docOc,
+    hvPrice: docCost,
+    hosVisit: docHv,
+    img: docImg,
+    hindi: docHin,
+    english :docEng,
+    apollo: docApollo,
+    otherC: docOther
+  };
+
+  fetch('http://localhost:9000/adddoc', {
+    method: 'POST',
+    mode: "cors",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(docObj),
+  })
+  .then( res => res.json()
+  .then(data => console.log('Doctor Added:', data))
+  .catch(err => console.error("Error: ", err)));
+
+  docForm.style.display = "none";
+};
+
+const toggleAddDocPage = () => {
+  const docForm = document.querySelector("#addDocForm");
+
+  if(docForm.style.display == "none" ||  docForm.style.display == ""){
+    docForm.style.display = "block";
+  } else {
+    docForm.style.display = "none";
+  }
+};
+
+const fetchDoc = async () => {
+  const HV = document.querySelector("#HV").checked;
+  const OC = document.querySelector("#OC").checked
+  const y5 = document.querySelector("#fivey").checked;
+  const y60 = document.querySelector("#sixtyy").checked;
+  const y11 = document.querySelector("#sixteeny").checked;
+  const y16 = document.querySelector("#sixteenmorey").checked;
+  const onetofive = document.querySelector("#onetofive").checked;
+  const fivetoten = document.querySelector("#fivetoten").checked;
+  const ten = document.querySelector("#ten").checked;
+  const eng= document.querySelector("#eng").checked;
+  const hin = document.querySelector("#hin").checked;
+  const AH = document.querySelector("#AH").checked;
+  const oC = document.querySelector("#oClinic").checked;
+
+  let filters = {
+  };
+
+  if(HV == true) filters.hv = true;
+  if(OC == true) filters.oc = true;
+  if(eng == true) filters.eng = true;
+  if(hin == true) filters.hin = true;
+  if(oC == true) filters.otherC = true, filters.apollo = false;
+  if(AH == true) filters.apollo = true, filters.otherC = false;
+  if(y5 == true) filters.exp = 5;
+  if(y60 == true) filters.exp = 10;
+  if(y11 == true) filters.exp = 16;
+  if(y16 == true) filters.exp = 17 ;
+  if(onetofive == true) filters.fees = 500;
+  if(fivetoten == true) filters.fees = 1000;
+  if(ten == true) filters.fees = 5000;
+ 
+
+  const query = new URLSearchParams(filters).toString();
+
+  const docs = await fetch(`http://localhost:9000/getdoctor?${query}`)
+  .then(res => res.json())
+  .then(data => console.log(data));
+
+  console.log(filters);
+  console.log(docs);
+};
+
+const leti = () => {
+  console.log("LMDAO");
+};
 
 export default function Home() {
   return(
@@ -26,8 +131,8 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.loginBtn}>
-              <button className={styles.loginButton}>
-                  <span>Login</span>
+              <button onClick={toggleAddDocPage}  className={styles.loginButton}>
+                  <span>Add Doctor</span>
                   <Image src="/user.svg" alt="user" width={26} height={26} />
               </button>
           </div>
@@ -76,6 +181,9 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.filterOptions}>
+            <div className={styles.showDoc}>
+              <button onClick={fetchDoc}>Show Doctors</button>
+            </div>
             <div className={styles.filterMOD}>
               <h1>Mode of Consult</h1>
               <div className={styles.MOD}>
@@ -93,20 +201,20 @@ export default function Home() {
               <h1>Experience (In Years)</h1>
               <div className={styles.MOD}>
                 <div>
-                  <input type="checkbox" name="05" id="05y" />
-                  <label htmlFor="05y">0-5</label>
+                  <input type="checkbox" name="exp" id="fivey" />
+                  <label htmlFor="fivey">0-5</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="60" id="60y" />
-                  <label htmlFor="60y">6-10</label>
+                  <input type="checkbox" name="exp" id="sixtyy" />
+                  <label htmlFor="sixtyy">6-10</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="16" id="16y" />
-                  <label htmlFor="16y">11-16</label>
+                  <input type="checkbox" name="exp" id="sixteeny" />
+                  <label htmlFor="sixteeny">11-16</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="16+" id="16+y" />
-                  <label htmlFor="16+y">16+</label>
+                  <input type="checkbox" name="exp" id="sixteenmorey" />
+                  <label htmlFor="sixteenmorey">16+</label>
                 </div>
               </div>
             </div>
@@ -137,22 +245,18 @@ export default function Home() {
                   <input type="checkbox" name="hin" id="hin" />
                   <label htmlFor="hin">Hindi</label>
                 </div>
-                <div>
-                  <input type="checkbox" name="tel" id="tel" />
-                  <label htmlFor="tel">Telugu</label>
-                </div>
               </div>
             </div>
             <div className={styles.filterMOD}>
               <h1>Facility</h1>
               <div className={styles.MOD}>
                 <div>
-                  <input type="checkbox" name="HV" id="HV" />
-                  <label htmlFor="HV">Apollo Hospitals</label>
+                  <input type="checkbox" name="HV" id="AH" />
+                  <label htmlFor="AH">Apollo Hospitals</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="OC" id="OC" />
-                  <label htmlFor="OC">Other Clinics</label>
+                  <input type="checkbox" name="OC" id="oClinic" />
+                  <label htmlFor="oClinic">Other Clinics</label>
                 </div>
               </div>
             </div>
@@ -362,6 +466,58 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className={styles.addDoc} id="addDocForm">
+        <h1>Add Doctor</h1>
+        <div>
+          <input required type="text" placeholder="Name" id="docName"/>
+          <input required type="number" placeholder="Years of Experience" id="docExp"/>
+        </div>
+        <div>
+          <input required type="text" placeholder="Degree" id="docDeg"/>
+          <input required type="text" placeholder="City" id="docCity"/>
+        </div>
+        <div>
+          <input required type="number" placeholder="Cost of Consultation" id="docCost"/>
+          <input required type="text" placeholder="Link of the Image of the Doctor" id="docImg"/>
+        </div>
+        <div>
+          <input required type="text" placeholder="Speciality" id="docSpec"/>
+        </div>
+        <div className={styles.checkboxes}>
+          <label>
+            Online Consult
+            <input type="checkbox" id="docOc"/>
+          </label>
+          <label>
+            Hospita Visit
+            <input type="checkbox" id="docHv"/>
+          </label>
+        </div>
+        <div className={styles.checkboxes}>
+        <label>
+            Hindi
+            <input type="checkbox" id="docHin"/>
+          </label>
+          <label>
+            English
+            <input type="checkbox" id="docEng"/>
+          </label>
+        </div>
+        <div className={styles.checkboxes}>
+        <label>
+            Apollo
+            <input type="checkbox" id="docApollo"/>
+          </label>
+          <label>
+            Other Clinic
+            <input type="checkbox" id="docOther"/>
+          </label>
+        </div>
+        <div>
+          <button onClick={addDoc}>Add Doctor</button>
+        </div>
+      </div>
     </div>
+
   );
 }
