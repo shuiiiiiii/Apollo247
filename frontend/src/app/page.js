@@ -36,7 +36,7 @@ const addDoc = () => {
     otherC: docOther
   };
 
-  fetch('http://localhost:9000/adddoc', {
+  fetch('https://apollo247.onrender.com/adddoc', {
     method: 'POST',
     mode: "cors",
     headers: { "Content-Type": "application/json" },
@@ -93,7 +93,7 @@ const fetchDoc = async () => {
 
   const query = new URLSearchParams(filters).toString();
 
-  const docs = await fetch(`http://localhost:9000/getdoctor?${query}`, {
+  const docs = await fetch(`https://apollo247.onrender.com/getdoctor?${query}`, {
     method: "GET",
     mode: "cors",
     headers: {
