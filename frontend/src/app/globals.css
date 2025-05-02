@@ -206,7 +206,7 @@ a {
 }
 
 .content{
-  height: 88%;
+  min-height: 88%;
   color: black;
   max-width: 1275px;
   display: flex;
