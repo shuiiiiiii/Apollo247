@@ -1,20 +1,20 @@
 'use client'
 
 import Image from "next/image";
-import styles from "./page.module.css";
+import "./page.module.css";
 import { Truculenta } from "next/font/google";
 
 const addDoc = () => {
   const docName = document.querySelector("#docName").value;
-  const docExp  = document.querySelector("#docExp").value;
-  const docDeg  = document.querySelector("#docDeg").value;
+  const docExp = document.querySelector("#docExp").value;
+  const docDeg = document.querySelector("#docDeg").value;
   const docCity = document.querySelector("#docCity").value;
   const docCost = document.querySelector("#docCost").value;
-  const docImg  = document.querySelector("#docImg").value;
-  const docOc   = document.querySelector("#docOc").checked;
-  const docHv   = document.querySelector("#docHv").checked;
-  const docHin  = document.querySelector("#docHin").checked;
-  const docEng  = document.querySelector("#docEng").checked;
+  const docImg = document.querySelector("#docImg").value;
+  const docOc = document.querySelector("#docOc").checked;
+  const docHv = document.querySelector("#docHv").checked;
+  const docHin = document.querySelector("#docHin").checked;
+  const docEng = document.querySelector("#docEng").checked;
   const docApollo = document.querySelector("#docApollo").checked;
   const docOther = document.querySelector("#docOther").checked;
   const docSpec = document.querySelector("#docSpec").value;
@@ -33,7 +33,7 @@ const addDoc = () => {
     hosVisit: docHv,
     img: docImg,
     hindi: docHin,
-    english :docEng,
+    english: docEng,
     apollo: docApollo,
     otherC: docOther
   };
@@ -41,12 +41,12 @@ const addDoc = () => {
   fetch('http://localhost:9000/adddoc', {
     method: 'POST',
     mode: "cors",
-    headers: {"Content-Type": "application/json"},
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(docObj),
   })
-  .then( res => res.json()
-  .then(data => console.log('Doctor Added:', data))
-  .catch(err => console.error("Error: ", err)));
+    .then(res => res.json()
+      .then(data => console.log('Doctor Added:', data))
+      .catch(err => console.error("Error: ", err)));
 
   docForm.style.display = "none";
 };
@@ -54,7 +54,7 @@ const addDoc = () => {
 const toggleAddDocPage = () => {
   const docForm = document.querySelector("#addDocForm");
 
-  if(docForm.style.display == "none" ||  docForm.style.display == ""){
+  if (docForm.style.display == "none" || docForm.style.display == "") {
     docForm.style.display = "block";
   } else {
     docForm.style.display = "none";
@@ -71,7 +71,7 @@ const fetchDoc = async () => {
   const onetofive = document.querySelector("#onetofive").checked;
   const fivetoten = document.querySelector("#fivetoten").checked;
   const ten = document.querySelector("#ten").checked;
-  const eng= document.querySelector("#eng").checked;
+  const eng = document.querySelector("#eng").checked;
   const hin = document.querySelector("#hin").checked;
   const AH = document.querySelector("#AH").checked;
   const oC = document.querySelector("#oClinic").checked;
@@ -79,33 +79,61 @@ const fetchDoc = async () => {
   let filters = {
   };
 
-  if(HV == true) filters.hv = true;
-  if(OC == true) filters.oc = true;
-  if(eng == true) filters.eng = true;
-  if(hin == true) filters.hin = true;
-  if(oC == true) filters.otherC = true, filters.apollo = false;
-  if(AH == true) filters.apollo = true, filters.otherC = false;
-  if(y5 == true) filters.exp = 5;
-  if(y60 == true) filters.exp = 10;
-  if(y11 == true) filters.exp = 16;
-  if(y16 == true) filters.exp = 17 ;
-  if(onetofive == true) filters.fees = 500;
-  if(fivetoten == true) filters.fees = 1000;
-  if(ten == true) filters.fees = 5000;
- 
+  if (HV == true) filters.hv = true;
+  if (OC == true) filters.oc = true;
+  if (eng == true) filters.eng = true;
+  if (hin == true) filters.hin = true;
+  if (oC == true) filters.otherC = true, filters.apollo = false;
+  if (AH == true) filters.apollo = true, filters.otherC = false;
+  if (y5 == true) filters.exp = 5;
+  if (y60 == true) filters.exp = 10;
+  if (y11 == true) filters.exp = 16;
+  if (y16 == true) filters.exp = 17;
+  if (onetofive == true) filters.fees = 500;
+  if (fivetoten == true) filters.fees = 1000;
+  if (ten == true) filters.fees = 5000;
+
   const query = new URLSearchParams(filters).toString();
 
   const docs = await fetch(`http://localhost:9000/getdoctor?${query}`, {
     method: "GET",
     mode: "cors",
     headers: {
-      "Content-Type" : "applicaion/json"
+      "Content-Type": "applicaion/json"
     }
   });
 
   const response = await docs.json();
-  console.log(filters);
-  console.log(response);;
+  console.log(response);
+
+  const container = document.getElementById('doctorContainer');
+  const childDivs = container.querySelectorAll('div');
+
+  childDivs.forEach(div => div.remove());
+
+  for(let i = 0; i < response.doctors.length; i++) {
+    const doctor = document.createElement('div');
+    doctor.setAttribute("className", "{styles.doctor}")
+
+    const div = document.createElement('div');
+    const img = document.createElement('img');
+
+    const div2 = document.createElement('div');
+    const h1 = document.createElement('h1');
+    const span = document.createElement('span');
+    const span2 = document.createElement('span');
+    const span3 = document.createElement('span');
+    const span4 = document.createElement('span');
+
+    const div3 = document.createElement('div');
+    const section = document.createElement('section');
+    const section2 = document.createElement('section');
+    const button = document.createElement('button');
+    const span5 = document.createElement('span');
+    const span6 = document.createElement('span');
+
+
+  };
 };
 
 const leti = () => {
@@ -113,13 +141,13 @@ const leti = () => {
 };
 
 export default function Home() {
-  return(
+  return (
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.navbar}>
-          <Image src="/apollo247.svg" width={70} height={48} alt="Apollo24x7"/>
+          <Image src="/apollo247.svg" width={70} height={48} alt="Apollo24x7" />
           <div className={styles.locationContainer}>
-              <Image className={styles.locationIcon} src="/location.svg" width={24} height={24} alt="Location" />
+            <Image className={styles.locationIcon} src="/location.svg" width={24} height={24} alt="Location" />
             <div>
               <h5 className={styles.SL}>Select Location</h5>
               <div className={styles.SAC}>
@@ -135,23 +163,23 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.loginBtn}>
-              <button onClick={toggleAddDocPage}  className={styles.loginButton}>
-                  <span>Add Doctor</span>
-                  <Image src="/user.svg" alt="user" width={26} height={26} />
-              </button>
+            <button onClick={toggleAddDocPage} className={styles.loginButton}>
+              <span>Add Doctor</span>
+              <Image src="/user.svg" alt="user" width={26} height={26} />
+            </button>
           </div>
         </div>
         <div className={styles.separator}></div>
         <div className={styles.links}>
-            <ul>
-              <li>Buy Medicines</li>
-              <li>Find Doctors</li>
-              <li>Lab Tests</li>
-              <li>Circle Membership</li>
-              <li>Health Records</li>
-              <li>Diabetes Reversal</li>
-              <li>Buy Insurance</li>
-            </ul>
+          <ul>
+            <li>Buy Medicines</li>
+            <li>Find Doctors</li>
+            <li>Lab Tests</li>
+            <li>Circle Membership</li>
+            <li>Health Records</li>
+            <li>Diabetes Reversal</li>
+            <li>Buy Insurance</li>
+          </ul>
         </div>
       </div>
       <div className={styles.content}>
@@ -167,19 +195,19 @@ export default function Home() {
             </div>
             <div className={styles.selectedFilter}>
               <div className={styles.SF}>
-                  Near Me
+                Near Me
                 <Image src="/close.svg" width={20} height={20} alt="close" />
               </div>
               <div className={styles.SF}>
-                  0-500
+                0-500
                 <Image src="/close.svg" width={20} height={20} alt="close" />
               </div>
               <div className={styles.SF}>
-                  11-16
+                11-16
                 <Image src="/close.svg" width={20} height={20} alt="close" />
               </div>
               <div className={styles.SF}>
-                  6-10
+                6-10
                 <Image src="/close.svg" width={20} height={20} alt="close" />
               </div>
             </div>
@@ -291,14 +319,14 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.doctors}>
+          <div className={styles.doctors} id="doctorContainer">
             <div className={styles.doctor}>
               <div>
                 <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
               </div>
               <div>
                 <h1>Dr. D Bhanu Prakash
-                  <Image src="/info.svg" width={14} height={14} alt="info"/>
+                  <Image src="/info.svg" width={14} height={14} alt="info" />
                 </h1>
                 <span className={styles.pos}>General Practioner</span>
                 <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
@@ -323,7 +351,7 @@ export default function Home() {
               </div>
               <div>
                 <h1>Dr. D Bhanu Prakash
-                  <Image src="/info.svg" width={14} height={14} alt="info"/>
+                  <Image src="/info.svg" width={14} height={14} alt="info" />
                 </h1>
                 <span className={styles.pos}>General Practioner</span>
                 <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
@@ -348,7 +376,7 @@ export default function Home() {
               </div>
               <div>
                 <h1>Dr. D Bhanu Prakash
-                  <Image src="/info.svg" width={14} height={14} alt="info"/>
+                  <Image src="/info.svg" width={14} height={14} alt="info" />
                 </h1>
                 <span className={styles.pos}>General Practioner</span>
                 <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
@@ -373,7 +401,7 @@ export default function Home() {
               </div>
               <div>
                 <h1>Dr. D Bhanu Prakash
-                  <Image src="/info.svg" width={14} height={14} alt="info"/>
+                  <Image src="/info.svg" width={14} height={14} alt="info" />
                 </h1>
                 <span className={styles.pos}>General Practioner</span>
                 <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
@@ -398,7 +426,7 @@ export default function Home() {
               </div>
               <div>
                 <h1>Dr. D Bhanu Prakash
-                  <Image src="/info.svg" width={14} height={14} alt="info"/>
+                  <Image src="/info.svg" width={14} height={14} alt="info" />
                 </h1>
                 <span className={styles.pos}>General Practioner</span>
                 <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
@@ -423,7 +451,7 @@ export default function Home() {
               </div>
               <div>
                 <h1>Dr. D Bhanu Prakash
-                  <Image src="/info.svg" width={14} height={14} alt="info"/>
+                  <Image src="/info.svg" width={14} height={14} alt="info" />
                 </h1>
                 <span className={styles.pos}>General Practioner</span>
                 <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
@@ -473,48 +501,48 @@ export default function Home() {
       <div className={styles.addDoc} id="addDocForm">
         <h1>Add Doctor</h1>
         <div>
-          <input required type="text" placeholder="Name" id="docName"/>
-          <input required type="number" placeholder="Years of Experience" id="docExp"/>
+          <input required type="text" placeholder="Name" id="docName" />
+          <input required type="number" placeholder="Years of Experience" id="docExp" />
         </div>
         <div>
-          <input required type="text" placeholder="Degree" id="docDeg"/>
-          <input required type="text" placeholder="City" id="docCity"/>
+          <input required type="text" placeholder="Degree" id="docDeg" />
+          <input required type="text" placeholder="City" id="docCity" />
         </div>
         <div>
-          <input required type="number" placeholder="Cost of Consultation" id="docCost"/>
-          <input required type="text" placeholder="Link of the Image of the Doctor" id="docImg"/>
+          <input required type="number" placeholder="Cost of Consultation" id="docCost" />
+          <input required type="text" placeholder="Link of the Image of the Doctor" id="docImg" />
         </div>
         <div>
-          <input required type="text" placeholder="Speciality" id="docSpec"/>
+          <input required type="text" placeholder="Speciality" id="docSpec" />
         </div>
         <div className={styles.checkboxes}>
           <label>
             Online Consult
-            <input type="checkbox" id="docOc"/>
+            <input type="checkbox" id="docOc" />
           </label>
           <label>
             Hospita Visit
-            <input type="checkbox" id="docHv"/>
+            <input type="checkbox" id="docHv" />
           </label>
         </div>
         <div className={styles.checkboxes}>
-        <label>
+          <label>
             Hindi
-            <input type="checkbox" id="docHin"/>
+            <input type="checkbox" id="docHin" />
           </label>
           <label>
             English
-            <input type="checkbox" id="docEng"/>
+            <input type="checkbox" id="docEng" />
           </label>
         </div>
         <div className={styles.checkboxes}>
-        <label>
+          <label>
             Apollo
-            <input type="checkbox" id="docApollo"/>
+            <input type="checkbox" id="docApollo" />
           </label>
           <label>
             Other Clinic
-            <input type="checkbox" id="docOther"/>
+            <input type="checkbox" id="docOther" />
           </label>
         </div>
         <div>
