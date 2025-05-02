@@ -87,7 +87,7 @@ const fetchDoc = async () => {
   if (y5 == true) filters.exp = 5;
   if (y60 == true) filters.exp = 10;
   if (y11 == true) filters.exp = 16;
-  if (y16 == true) filters.exp = 17;
+  if (y16 == true) filters.exp = 50;
   if (onetofive == true) filters.fees = 500;
   if (fivetoten == true) filters.fees = 1000;
   if (ten == true) filters.fees = 5000;
@@ -351,6 +351,181 @@ export default function Home() {
             </div>
           </div>
           <div className="doctors" id="doctorContainer">
+            <div className="doctor">
+              <div>
+                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
+              </div>
+              <div>
+                <h1>Dr. D Bhanu Prakash
+                  <Image src="/info.svg" width="14" height="14" alt="info" />
+                </h1>
+                <span className="pos">General Practioner</span>
+                <span className="exp">10 Years • MBBS, AFIH, Advanced Certificate</span>
+                <span className="place">Hyderabad</span>
+                <span className="hos">Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
+              </div>
+              <div>
+                <section className="price">
+                  ₹1200
+                </section>
+                <section>
+                  <button>
+                    <span className="co">Consult Online</span>
+                    <span className="avail">Available at 01:40 AM</span>
+                  </button>
+                </section>
+              </div>
+            </div>
+            <div className="doctor">
+              <div>
+                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
+              </div>
+              <div>
+                <h1>Dr. D Bhanu Prakash
+                  <Image src="/info.svg" width="14" height="14" alt="info" />
+                </h1>
+                <span className="pos">General Practioner</span>
+                <span className="exp">10 Years • MBBS, AFIH, Advanced Certificate</span>
+                <span className="place">Hyderabad</span>
+                <span className="hos">Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
+              </div>
+              <div>
+                <section className="price">
+                  ₹1200
+                </section>
+                <section>
+                  <button>
+                    <span className="co">Consult Online</span>
+                    <span className="avail">Available at 01:40 AM</span>
+                  </button>
+                </section>
+              </div>
+            </div>
+            <div className="doctor">
+              <div>
+                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
+              </div>
+              <div>
+                <h1>Dr. D Bhanu Prakash
+                  <Image src="/info.svg" width="14" height="14" alt="info" />
+                </h1>
+                <span className="pos">General Practioner</span>
+                <span className="exp">10 Years • MBBS, AFIH, Advanced Certificate</span>
+                <span className="place">Hyderabad</span>
+                <span className="hos">Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
+              </div>
+              <div>
+                <section className="price">
+                  ₹1200
+                </section>
+                <section>
+                  <button>
+                    <span className="co">Consult Online</span>
+                    <span className="avail">Available at 01:40 AM</span>
+                  </button>
+                </section>
+              </div>
+            </div>
+            <div className="doctor">
+              <div>
+                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
+              </div>
+              <div>
+                <h1>Dr. D Bhanu Prakash
+                  <Image src="/info.svg" width="14" height="14" alt="info" />
+                </h1>
+                <span className="pos">General Practioner</span>
+                <span className="exp">10 Years • MBBS, AFIH, Advanced Certificate</span>
+                <span className="place">Hyderabad</span>
+                <span className="hos">Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
+              </div>
+              <div>
+                <section className="price">
+                  ₹1200
+                </section>
+                <section>
+                  <button>
+                    <span className="co">Consult Online</span>
+                    <span className="avail">Available at 01:40 AM</span>
+                  </button>
+                </section>
+              </div>
+            </div>
+            <div className="doctor">
+              <div>
+                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
+              </div>
+              <div>
+                <h1>Dr. D Bhanu Prakash
+                  <Image src="/info.svg" width="14" height="14" alt="info" />
+                </h1>
+                <span className="pos">General Practioner</span>
+                <span className="exp">10 Years • MBBS, AFIH, Advanced Certificate</span>
+                <span className="place">Hyderabad</span>
+                <span className="hos">Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
+              </div>
+              <div>
+                <section className="price">
+                  ₹1200
+                </section>
+                <section>
+                  <button>
+                    <span className="co">Consult Online</span>
+                    <span className="avail">Available at 01:40 AM</span>
+                  </button>
+                </section>
+              </div>
+            </div>
+            <div className="doctor">
+              <div>
+                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
+              </div>
+              <div>
+                <h1>Dr. D Bhanu Prakash
+                  <Image src="/info.svg" width="14" height="14" alt="info" />
+                </h1>
+                <span className="pos">General Practioner</span>
+                <span className="exp">10 Years • MBBS, AFIH, Advanced Certificate</span>
+                <span className="place">Hyderabad</span>
+                <span className="hos">Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
+              </div>
+              <div>
+                <section className="price">
+                  ₹1200
+                </section>
+                <section>
+                  <button>
+                    <span className="co">Consult Online</span>
+                    <span className="avail">Available at 01:40 AM</span>
+                  </button>
+                </section>
+              </div>
+            </div>
+            <div className="doctor">
+              <div>
+                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
+              </div>
+              <div>
+                <h1>Dr. D Bhanu Prakash
+                  <Image src="/info.svg" width="14" height="14" alt="info" />
+                </h1>
+                <span className="pos">General Practioner</span>
+                <span className="exp">10 Years • MBBS, AFIH, Advanced Certificate</span>
+                <span className="place">Hyderabad</span>
+                <span className="hos">Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
+              </div>
+              <div>
+                <section className="price">
+                  ₹1200
+                </section>
+                <section>
+                  <button>
+                    <span className="co">Consult Online</span>
+                    <span className="avail">Available at 01:40 AM</span>
+                  </button>
+                </section>
+              </div>
+            </div>
             <div className="doctor">
               <div>
                 <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
