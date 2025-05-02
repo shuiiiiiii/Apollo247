@@ -110,36 +110,61 @@ const fetchDoc = async () => {
 
   childDivs.forEach(div => div.remove());
 
-  // for(let i = 0; i < response.doctors.length; i++) {
-  //   const doctor = document.createElement('div');
-  //   doctor.className = "doctor";
+  for(let i = 0; i < response.doctors.length; i++) {
+    const doctor = document.createElement('div');
+    doctor.className = "doctor";
 
-  //   const div = document.createElement('div');
-  //   const img = document.createElement('img');
+    const div = document.createElement('div');
+    const img = document.createElement('img');
 
-  //   const div2 = document.createElement('div');
-  //   const h1 = document.createElement('h1');
-  //   const span = document.createElement('span');
-  //   span.className = "pos";
-  //   const span2 = document.createElement('span');
-  //   span2.className = "exp";
-  //   const span3 = document.createElement('span');
-  //   span3.className = "place";
-  //   const span4 = document.createElement('span');
-  //   span4.className = hos;
+    const div2 = document.createElement('div');
+    const h1 = document.createElement('h1');
+    const span = document.createElement('span');
+    span.className = "pos";
+    const span2 = document.createElement('span');
+    span2.className = "exp";
+    const span3 = document.createElement('span');
+    span3.className = "place";
+    const span4 = document.createElement('span');
+    span4.className = "hos";
 
-  //   const div3 = document.createElement('div');
-  //   const section = document.createElement('section');
-  //   section.className = "price";
-  //   const section2 = document.createElement('section');
-  //   const button = document.createElement('button');
-  //   const span5 = document.createElement('span');
-  //   span5.className = "co";
-  //   const span6 = document.createElement('span');
-  //   span6.className = "avail";
+    const div3 = document.createElement('div');
+    const section = document.createElement('section');
+    section.className = "price";
+    const section2 = document.createElement('section');
+    const button = document.createElement('button');
+    const span5 = document.createElement('span');
+    span5.className = "co";
+    const span6 = document.createElement('span');
+    span6.className = "avail";
 
-  //   h1.innerText = response.doctors[i];
-  // };
+    h1.innerText = response.doctors[i].name;
+    img.src = response.doctors[i].img;
+    span.innerText = response.doctors[i].speciality;
+    span2.innerText = `${response.doctors[i].exp} YEARS  • ${response.doctors[i].degree}`;
+    span3.innerText = response.doctors[i].city;
+    span4.innerText = "Apollo Registered Doctor";
+    section.innerText = `₹${response.doctors[i].oCprice}`;
+    span5.innerText = "Consult Online";
+    span6.innerText = "Available at 01:40A AM";
+
+    doctor.appendChild(div);
+    div.appendChild(img);
+    doctor.appendChild(div2);
+    div2.appendChild(h1, span, span2, span3, span4);
+    div2.appendChild(span);
+    div2.appendChild(span2);
+    div2.appendChild(span3);
+    div2.appendChild(span4);
+    doctor.appendChild(div3);
+    div3.appendChild(section);
+    div3.appendChild(section2);
+    section2.appendChild(button);
+    button.appendChild(span5);
+    button.appendChild(span6);
+
+    container.appendChild(doctor);
+  };
 };
 
 const leti = () => {
@@ -332,7 +357,7 @@ export default function Home() {
               </div>
               <div>
                 <h1>Dr. D Bhanu Prakash
-                  <Image src="/info.svg" width="14px" height="14px" alt="info" />
+                  <Image src="/info.svg" width="14" height="14" alt="info" />
                 </h1>
                 <span className="pos">General Practioner</span>
                 <span className="exp">10 Years • MBBS, AFIH, Advanced Certificate</span>
@@ -378,7 +403,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      <div className="addDoc" id="addDocForm">
+    </div>
+    <div className="addDoc" id="addDocForm">
         <h1>Add Doctor</h1>
         <div>
           <input required type="text" placeholder="Name" id="docName" />
@@ -429,7 +455,6 @@ export default function Home() {
           <button onClick={addDoc}>Add Doctor</button>
         </div>
       </div>
-    </div>
   </div>
   );
 }
