@@ -1,7 +1,6 @@
 'use client'
 
 import Image from "next/image";
-import "./page.module.css";
 import { Truculenta } from "next/font/google";
 
 const addDoc = () => {
@@ -113,7 +112,7 @@ const fetchDoc = async () => {
 
   for(let i = 0; i < response.doctors.length; i++) {
     const doctor = document.createElement('div');
-    doctor.setAttribute("className", "{styles.doctor}")
+    doctor.setAttribute("className", ".doctor}")
 
     const div = document.createElement('div');
     const img = document.createElement('img');
@@ -142,35 +141,35 @@ const leti = () => {
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <div className={styles.navbar}>
+    <div className='container'>
+      <div className='header'>
+        <div className='navbar'>
           <Image src="/apollo247.svg" width={70} height={48} alt="Apollo24x7" />
-          <div className={styles.locationContainer}>
-            <Image className={styles.locationIcon} src="/location.svg" width={24} height={24} alt="Location" />
+          <div className='locationContainer'>
+            <Image className='locationIcon' src="/location.svg" width={24} height={24} alt="Location" />
             <div>
-              <h5 className={styles.SL}>Select Location</h5>
-              <div className={styles.SAC}>
-                <h4 className={styles.SA}>Select Address</h4>
+              <h5 className='SL'>Select Location</h5>
+              <div className='SAC'>
+                <h4 className='SA'>Select Address</h4>
                 <Image src="/dropdown.svg" width={20} height={20} alt="dropdown" />
               </div>
             </div>
           </div>
-          <div className={styles.searchBar}>
-            <div className={styles.searchInputBar}>
-              <Image className={styles.searchIcon} src="/search.svg" width={16} height={16} alt="search" />
-              <input className={styles.searchInput} type="text" placeholder="Search Doctors, Speacialities, Conditions etc." />
+          <div className='searchBar'>
+            <div className='searchInputBar'>
+              <Image className='searchIcon' src="/search.svg" width={16} height={16} alt="search" />
+              <input className='searchInput' type="text" placeholder="Search Doctors, Speacialities, Conditions etc." />
             </div>
           </div>
-          <div className={styles.loginBtn}>
-            <button onClick={toggleAddDocPage} className={styles.loginButton}>
+          <div className='loginBtn'>
+            <button onClick={toggleAddDocPage} className='loginButton'>
               <span>Add Doctor</span>
               <Image src="/user.svg" alt="user" width={26} height={26} />
             </button>
           </div>
         </div>
-        <div className={styles.separator}></div>
-        <div className={styles.links}>
+        <div className='separator'></div>
+        <div className='links'>
           <ul>
             <li>Buy Medicines</li>
             <li>Find Doctors</li>
@@ -182,10 +181,10 @@ export default function Home() {
           </ul>
         </div>
       </div>
-      <div className={styles.content}>
-        <div className={styles.leftSection}>
-          <div className={styles.filters}>
-            <div className={styles.filterHeading}>
+      <div className='content'>
+        <div className='leftSection'>
+          <div className='filters'>
+            <div className='filterHeading'>
               <span>
                 Filters
               </span>
@@ -193,32 +192,32 @@ export default function Home() {
                 Clear All
               </span>
             </div>
-            <div className={styles.selectedFilter}>
-              <div className={styles.SF}>
+            <div className='selectedFilter'>
+              <div className='SF'>
                 Near Me
                 <Image src="/close.svg" width={20} height={20} alt="close" />
               </div>
-              <div className={styles.SF}>
+              <div className='SF'>
                 0-500
                 <Image src="/close.svg" width={20} height={20} alt="close" />
               </div>
-              <div className={styles.SF}>
+              <div className='SF'>
                 11-16
                 <Image src="/close.svg" width={20} height={20} alt="close" />
               </div>
-              <div className={styles.SF}>
+              <div className='SF'>
                 6-10
                 <Image src="/close.svg" width={20} height={20} alt="close" />
               </div>
             </div>
           </div>
-          <div className={styles.filterOptions}>
-            <div className={styles.showDoc}>
+          <div className='filterOptions'>
+            <div className='showDoc'>
               <button onClick={fetchDoc}>Show Doctors</button>
             </div>
-            <div className={styles.filterMOD}>
+            <div className='filterMOD'>
               <h1>Mode of Consult</h1>
-              <div className={styles.MOD}>
+              <div className='MOD'>
                 <div>
                   <input type="checkbox" name="HV" id="HV" />
                   <label htmlFor="HV">Hospital Visit</label>
@@ -229,9 +228,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className={styles.filterMOD}>
+            <div className='filterMOD'>
               <h1>Experience (In Years)</h1>
-              <div className={styles.MOD}>
+              <div className='MOD'>
                 <div>
                   <input type="checkbox" name="exp" id="fivey" />
                   <label htmlFor="fivey">0-5</label>
@@ -250,9 +249,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className={styles.filterMOD}>
+            <div className='filterMOD'>
               <h1>Fees (In Rupees)</h1>
-              <div className={styles.MOD}>
+              <div className='MOD'>
                 <div>
                   <input type="checkbox" name="onetofive" id="onetofive" />
                   <label htmlFor="onetofive">100-500</label>
@@ -267,9 +266,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className={styles.filterMOD}>
+            <div className='filterMOD'>
               <h1>Language</h1>
-              <div className={styles.MOD}>
+              <div className='MOD'>
                 <div>
                   <input type="checkbox" name="eng" id="eng" />
                   <label htmlFor="eng">English</label>                </div>
@@ -279,9 +278,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className={styles.filterMOD}>
+            <div className='filterMOD'>
               <h1>Facility</h1>
-              <div className={styles.MOD}>
+              <div className='MOD'>
                 <div>
                   <input type="checkbox" name="HV" id="AH" />
                   <label htmlFor="AH">Apollo Hospitals</label>
@@ -294,8 +293,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className={styles.middleSection}>
-          <div className={styles.addressLinks}>
+        <div className='middleSection'>
+          <div className='addressLinks'>
             <span>Home</span>
             <span>
               <Image src="/dropdown.svg" width={15} height={15} alt="right" />
@@ -306,12 +305,12 @@ export default function Home() {
             </span>
             <span>General Physicians</span>
           </div>
-          <div className={styles.contentHeading}>
+          <div className="contentHeading">
             <div>
               <h1>Consult General Physicians Online - Internal Medicine Specialists</h1>
               <h3>(763 doctors)</h3>
             </div>
-            <div className={styles.dropdownFilter}>
+            <div className="dropdownFilter">
               <div>
                 <Image src="/sort.svg" width={24} height={24} alt="sort" />
                 <span>Relevance</span>
@@ -319,8 +318,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.doctors} id="doctorContainer">
-            <div className={styles.doctor}>
+          <div className="doctors" id="doctorContainer">
+            <div className="doctor">
               <div>
                 <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
               </div>
@@ -328,153 +327,27 @@ export default function Home() {
                 <h1>Dr. D Bhanu Prakash
                   <Image src="/info.svg" width={14} height={14} alt="info" />
                 </h1>
-                <span className={styles.pos}>General Practioner</span>
-                <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
-                <span className={styles.place}>Hyderabad</span>
-                <span className={styles.hos}>Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
+                <span className="pos">General Practioner</span>
+                <span className="exp">10 Years • MBBS, AFIH, Advanced Certificate</span>
+                <span className="place">Hyderabad</span>
+                <span className="hos">Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
               </div>
               <div>
-                <section className={styles.price}>
+                <section className="price">
                   ₹1200
                 </section>
                 <section>
                   <button>
-                    <span className={styles.co}>Consult Online</span>
-                    <span className={styles.avail}>Available at 01:40 AM</span>
+                    <span className="co">Consult Online</span>
+                    <span className="avail">Available at 01:40 AM</span>
                   </button>
                 </section>
               </div>
             </div>
-            <div className={styles.doctor}>
-              <div>
-                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
-              </div>
-              <div>
-                <h1>Dr. D Bhanu Prakash
-                  <Image src="/info.svg" width={14} height={14} alt="info" />
-                </h1>
-                <span className={styles.pos}>General Practioner</span>
-                <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
-                <span className={styles.place}>Hyderabad</span>
-                <span className={styles.hos}>Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
-              </div>
-              <div>
-                <section className={styles.price}>
-                  ₹1200
-                </section>
-                <section>
-                  <button>
-                    <span className={styles.co}>Consult Online</span>
-                    <span className={styles.avail}>Available at 01:40 AM</span>
-                  </button>
-                </section>
-              </div>
-            </div>
-            <div className={styles.doctor}>
-              <div>
-                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
-              </div>
-              <div>
-                <h1>Dr. D Bhanu Prakash
-                  <Image src="/info.svg" width={14} height={14} alt="info" />
-                </h1>
-                <span className={styles.pos}>General Practioner</span>
-                <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
-                <span className={styles.place}>Hyderabad</span>
-                <span className={styles.hos}>Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
-              </div>
-              <div>
-                <section className={styles.price}>
-                  ₹1200
-                </section>
-                <section>
-                  <button>
-                    <span className={styles.co}>Consult Online</span>
-                    <span className={styles.avail}>Available at 01:40 AM</span>
-                  </button>
-                </section>
-              </div>
-            </div>
-            <div className={styles.doctor}>
-              <div>
-                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
-              </div>
-              <div>
-                <h1>Dr. D Bhanu Prakash
-                  <Image src="/info.svg" width={14} height={14} alt="info" />
-                </h1>
-                <span className={styles.pos}>General Practioner</span>
-                <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
-                <span className={styles.place}>Hyderabad</span>
-                <span className={styles.hos}>Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
-              </div>
-              <div>
-                <section className={styles.price}>
-                  ₹1200
-                </section>
-                <section>
-                  <button>
-                    <span className={styles.co}>Consult Online</span>
-                    <span className={styles.avail}>Available at 01:40 AM</span>
-                  </button>
-                </section>
-              </div>
-            </div>
-            <div className={styles.doctor}>
-              <div>
-                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
-              </div>
-              <div>
-                <h1>Dr. D Bhanu Prakash
-                  <Image src="/info.svg" width={14} height={14} alt="info" />
-                </h1>
-                <span className={styles.pos}>General Practioner</span>
-                <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
-                <span className={styles.place}>Hyderabad</span>
-                <span className={styles.hos}>Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
-              </div>
-              <div>
-                <section className={styles.price}>
-                  ₹1200
-                </section>
-                <section>
-                  <button>
-                    <span className={styles.co}>Consult Online</span>
-                    <span className={styles.avail}>Available at 01:40 AM</span>
-                  </button>
-                </section>
-              </div>
-            </div>
-            <div className={styles.doctor}>
-              <div>
-                <img src="https://images.apollo247.in/doctors/6e145672-2cb8-4695-9a32-f8317c192dfc-1741071710933.jpg?tr=w-74,c-at_max,f-auto,q=80,dpr-2" alt="doctor" />
-              </div>
-              <div>
-                <h1>Dr. D Bhanu Prakash
-                  <Image src="/info.svg" width={14} height={14} alt="info" />
-                </h1>
-                <span className={styles.pos}>General Practioner</span>
-                <span className={styles.exp}>10 Years • MBBS, AFIH, Advanced Certificate</span>
-                <span className={styles.place}>Hyderabad</span>
-                <span className={styles.hos}>Apollo 24|7 Virtual Clinic - Telangana, Hyderabad</span>
-              </div>
-              <div>
-                <section className={styles.price}>
-                  ₹1200
-                </section>
-                <section>
-                  <button>
-                    <span className={styles.co}>Consult Online</span>
-                    <span className={styles.avail}>Available at 01:40 AM</span>
-                  </button>
-                </section>
-              </div>
-            </div>
-          </div>
-          <div className={styles.pagination}>
+          <div className="pagination">
             <ul>
               <li>&#60;</li>
-              <li className={styles.active}>2</li>
+              <li className="active">2</li>
               <li>3</li>
               <li>4</li>
               <li>5</li>
@@ -484,21 +357,21 @@ export default function Home() {
             </ul>
           </div>
         </div>
-        <div className={styles.rightSection}>
-          <div className={styles.ad}>
+      </div>
+      <div className="rightSection">
+          <div className="ad">
             <div>
               <Image src="/docs.webp" width={172} height={82} alt="docs" />
             </div>
-            <div className={styles.NH}>
+            <div className="NH">
               Need help consult the right doctor?
             </div>
-            <div className={styles.call}>
+            <div className="call">
               Call +91-8040245807 to book instantly
             </div>
           </div>
         </div>
-      </div>
-      <div className={styles.addDoc} id="addDocForm">
+      <div className="addDoc" id="addDocForm">
         <h1>Add Doctor</h1>
         <div>
           <input required type="text" placeholder="Name" id="docName" />
@@ -515,7 +388,7 @@ export default function Home() {
         <div>
           <input required type="text" placeholder="Speciality" id="docSpec" />
         </div>
-        <div className={styles.checkboxes}>
+        <div className="checkboxes">
           <label>
             Online Consult
             <input type="checkbox" id="docOc" />
@@ -525,7 +398,7 @@ export default function Home() {
             <input type="checkbox" id="docHv" />
           </label>
         </div>
-        <div className={styles.checkboxes}>
+        <div className="checkboxes">
           <label>
             Hindi
             <input type="checkbox" id="docHin" />
@@ -535,7 +408,7 @@ export default function Home() {
             <input type="checkbox" id="docEng" />
           </label>
         </div>
-        <div className={styles.checkboxes}>
+        <div className="checkboxes">
           <label>
             Apollo
             <input type="checkbox" id="docApollo" />
@@ -550,6 +423,6 @@ export default function Home() {
         </div>
       </div>
     </div>
-
+  </div>
   );
 }
