@@ -93,15 +93,19 @@ const fetchDoc = async () => {
   if(fivetoten == true) filters.fees = 1000;
   if(ten == true) filters.fees = 5000;
  
-
   const query = new URLSearchParams(filters).toString();
 
-  const docs = await fetch(`http://localhost:9000/getdoctor?${query}`)
-  .then(res => res.json())
-  .then(data => console.log(data));
+  const docs = await fetch(`http://localhost:9000/getdoctor?${query}`, {
+    method: "GET",
+    mode: "cors",
+    headers: {
+      "Content-Type" : "applicaion/json"
+    }
+  });
 
+  const response = await docs.json();
   console.log(filters);
-  console.log(docs);
+  console.log(response);;
 };
 
 const leti = () => {
